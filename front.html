@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
+</head>
+<body>
+<h2>Send e-mail from my portal:</h2>
+
+<form method="post">
+    {% csrf_token %}
+    From Mail:<br>
+    <input type="email" name="from_email"><br>
+    Recipent:<br>
+    <input type="email" name="to_email"><br>
+    Subject:<br>
+    <input type="text" name="subject"><br>
+    Message:<br>
+    <input type="text" name="message" size="50"><br>
+    <!--    HTML Message:<br>-->
+    <!--    <input type="text" name="HTMLmessage" size="50"><br><br>-->
+    Editor:<br>
+    <textarea name="HTMLmessage">
+        Editor</textarea><br>
+    <input type="submit" value="Send">
+    <input type="reset" value="Reset">
+</form>
+</body>
+</html>
